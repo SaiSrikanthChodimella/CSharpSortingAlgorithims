@@ -88,24 +88,22 @@ This will execute the benchmarks and display the results in the console. Benchma
 The benchmarks will output detailed performance metrics, including:
 
 - **Mean time**: The average time taken to sort the array.
-- **Allocated memory**: The amount of memory allocated during the sorting process.
 - **Standard deviation**: The variation in execution times.
 
 ### Example Output
 
-| Method                         | Array Size | Mean (ms) | Allocated Memory (MB) |
-|--------------------------------|------------|-----------|-----------------------|
-| BubbleSortBenchMark            | 10,000     | 100.23    | 0.5                   |
-| SelectionSortBenchMark         | 10,000     | 80.45     | 0.5                   |
-| QuickSortBenchMark             | 10,000     | 5.67      | 0.1                   |
-| InsertionSortBenchMark         | 10,000     | 60.12     | 0.5                   |
-| MergeSortBenchMark             | 10,000     | 10.34     | 0.2                   |
-| ParallelMergeSortBenchMark     | 10,000     | 8.56      | 0.3                   |
+| Method                     | arraysize | Mean      | Error     | StdDev    |
+|--------------------------- |---------- |----------:|----------:|----------:|
+| ParallelMergeSortBenchMark | 10000     |  4.119 ms | 0.2061 ms | 0.5979 ms |
+| ParallelMergeSortBenchMark | 50000     | 26.844 ms | 0.5339 ms | 1.2159 ms |
+| ParallelMergeSortBenchMark | 100000    | 54.910 ms | 1.2842 ms | 3.5371 ms |
 
-### Observations
-- **Bubble Sort** and **Selection Sort** are the slowest algorithms, especially for larger arrays.
-- **Quick Sort** and **Merge Sort** perform significantly better, with Quick Sort being the fastest in most cases.
-- **Parallel Merge Sort** leverages multi-core processing to improve performance, especially for large datasets.
+#### Legends
+- arraysize : Value of the 'arraysize' parameter
+- Mean      : Arithmetic mean of all measurements
+- Error     : Half of 99.9% confidence interval
+- StdDev    : Standard deviation of all measurements
+- 1 ms      : 1 Millisecond (0.001 sec)
 
 ---
 
@@ -132,5 +130,5 @@ Contributions are welcome! If you'd like to add more sorting algorithms or impro
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the LICENSE.md file for details.
 
